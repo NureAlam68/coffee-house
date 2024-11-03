@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const Heading = ({title, subtitle}) => {
     return (
-        <div className='flex flex-col w-full justify-center items-center mt-[88px] mb-[50px]'>
+        <div className='flex flex-col w-full justify-center items-center mb-[50px]'>
             <h1 className='text-xl md:text-2xl lg:text-5xl font-thin mb-6'>
                 {title}
             </h1>
