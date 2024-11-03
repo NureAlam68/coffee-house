@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 px-20">
+    <div className="navbar px-44 md:py-10 backdrop-blur-xl bg-white/30 z-50 fixed">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -25,20 +25,20 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/coffees">Coffees</NavLink>
-            <NavLink to="/dashboard">Dashboard</NavLink>
+            <NavLink className={({isActive}) => `text-base font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`} to="/">Home</NavLink>
+            <NavLink className={({isActive}) => `text-base font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`} to="/coffees">Coffees</NavLink>
+            <NavLink className={({isActive}) => `text-base font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`} to="/dashboard">Dashboard</NavLink>
           </ul>
         </div>
-        <Link to="/" className="text-xl">
+        <Link to="/" className="text-[24px] font-bold">
           Coffee House
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-10">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/coffees">Coffees</NavLink>
-          <NavLink to="/dashboard">Dashboard</NavLink>
+          <NavLink className={({isActive}) => `text-base font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`} to="/">Home</NavLink>
+          <NavLink className={({isActive}) => `text-base font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`} to="/coffees">Coffees</NavLink>
+          <NavLink className={({isActive}) => `text-base font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`} to="/dashboard">Dashboard</NavLink>
         </ul>
       </div>
     </div>
