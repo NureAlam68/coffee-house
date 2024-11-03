@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Heading from "../components/Heading";
-import { getAllFavorites } from "../utilities/localStorage";
+import { getAllFavorites, removeFavorite } from "../utilities/localStorage";
 import Card from "../components/Card";
 
 const Dashboard = () => {
@@ -9,6 +9,14 @@ const Dashboard = () => {
         const favorites = getAllFavorites();
         setCoffees(favorites)
     }, [])
+
+    const handleRemove = id => {
+        removeFavorite(id)
+        const favorites = getAllFavorites();
+        setCoffees(favorites)
+    }
+
+
     return (
         <div>
             <Heading title={'Welcome to Dashboard'}
@@ -16,7 +24,7 @@ const Dashboard = () => {
             ></Heading>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-14">
         {coffees.map((coffee) => (
-          <Card key={coffee.id} coffee={coffee}></Card>
+          <Card handleRemove={handleRemove} key={coffee.id} coffee={coffee}></Card>
         ))}
       </div>
         </div>
